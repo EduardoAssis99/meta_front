@@ -63,9 +63,14 @@ export default {
       },
       deleteCategory(id) {
         axios.delete("category" + "/" + id)
-          .then(response => {
-            this.categories = response.data;
-            this.$router.push({path: '/'});
+          .then(() => {
+            new Swal({
+              title:  'Sucesso',
+              text:   'Registrado deletado com Sucesso',
+              icon:   'success',
+            }).then(() => {
+              this.$router.push({path: '/'});
+            });
           })
           .catch(() => {
             Swal.fire({

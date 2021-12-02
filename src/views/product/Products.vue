@@ -82,9 +82,14 @@ export default {
       },
       deleteProduct(id) {
         axios.delete("product" + "/" + id)
-          .then(response => {
-            this.products = response.data.data;
-            this.$router.push({path: '/'});
+          .then(() => {
+            new Swal({
+              title:  'Sucesso',
+              text:   'Registrado deletado com Sucesso',
+              icon:   'success',
+            }).then(() => {
+              this.$router.push({path: '/'});
+            });
           })
           .catch(() => {
             Swal.fire({

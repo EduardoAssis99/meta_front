@@ -1,5 +1,11 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class="fs-1">Categorias e Quantidade de Produtos</div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
 
     <div v-for="item in categories" :key="item" class="card text-white bg-secondary" style="width: 18rem;">
       <div class="card-body">
